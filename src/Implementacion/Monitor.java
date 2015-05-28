@@ -15,6 +15,7 @@ public class Monitor {
 
     private String nombre;
     private String dia;
+    private int costo;
     private int horaInicio;
     private int horaFin;
 
@@ -57,4 +58,14 @@ public class Monitor {
     public void setHoraFin(int horaFin) {
         this.horaFin = horaFin;
     }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+    
+    
 }
