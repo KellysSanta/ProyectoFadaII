@@ -24,12 +24,6 @@ public class ComiteIngenuo {
         comite = new ArrayList<Monitor>();
         numComite = monitors.size() ;
     }
-
-    //Metodo encargado de generar el menor comite
-    public ArrayList<Monitor> generarComiteIngenua(){
-        comite = new ArrayList<Monitor>();
-        return comite;
-    }
     
    
     public void yarg(String prefix, int n) {
@@ -121,44 +115,6 @@ public class ComiteIngenuo {
         return resp;
     }
     
-    
-
-
-
-    //Metodo encargado de verificar si el nuevo comite es menor que el que hay y si es asi lo añade
-    public void addComite(ArrayList<Monitor> newComite){
-        if (comite.size() == 0){
-            comite = newComite;
-            numComite = comite.size();
-        }else if (comite.size() > newComite.size()){
-            comite = newComite;
-            numComite = comite.size();
-        }
-    }
-
-    //Metodo encargado de verificar si un monitor puede no ser parte del comite
-    public boolean checkNoIntegrante(ArrayList<Monitor> comite, Monitor monitor){
-        boolean noIntegrante = false;
-        for (int i = 0; i < comite.size(); i++) {
-            //Se compara que este en el mismo dia
-            if (monitor.getDia().equals(comite.get(i).getDia())){
-                //Se compara si la hora de inicio del monitor esta entre una de las horas del comite
-                if (monitor.getHoraInicio() < comite.get(i).getHoraFin() &&
-                        monitor.getHoraFin() > comite.get(i).getHoraInicio()){
-                    noIntegrante = true;
-                }
-
-            }
-        }
-        return noIntegrante;
-    }
-
-    //Funcion auxiliar que retorna un array list sin el monitor de la posicion que se le pasa
-    public ArrayList<Monitor> excludeMonitor(ArrayList<Monitor> monitors, int posExclude){
-        ArrayList<Monitor> tmp = new ArrayList<Monitor>(monitors); //Se crea una copia de los monitores
-        tmp.remove(posExclude);//Se elimina el monitor de la posicion que se ingresa
-        return tmp; //Se retorna la lista de monitores sin el monitor eliminado
-    }
 
     //Getters y Setters
     public ArrayList<Monitor> getMonitors() {
